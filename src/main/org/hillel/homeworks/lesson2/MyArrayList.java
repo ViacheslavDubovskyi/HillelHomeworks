@@ -7,7 +7,7 @@ public class MyArrayList implements List<Integer> {
     int size;
     int[] arrayList;
 
-    //Constructor
+    //Constructor of the class MyArrayList
     public MyArrayList(int size) {
         this.size = size;
         this.arrayList = initArray(size);
@@ -86,23 +86,25 @@ public class MyArrayList implements List<Integer> {
         size++;
     }
 
-    @Override
-    public boolean add(Integer integer) {
+    public void add(int element) {
         int[] newArray = new int[arrayList.length + 1];
-        newArray[arrayList.length] = integer;
+        newArray[arrayList.length] = element;
         System.arraycopy(arrayList, 0, newArray, 0, arrayList.length);
         arrayList = newArray;
         size++;
-        return true;
     }
 
-    public boolean removeByValue(int value) {
+    public void removeByValue(int value) {
         for (int i = 0; i < arrayList.length; i++) {
             if (arrayList[i] == value) {
                 remove(i);
             }
         }
-        return true;
+    }
+
+    @Override
+    public boolean add(Integer integer) {
+        return false;
     }
 
     @Override
