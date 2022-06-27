@@ -3,6 +3,30 @@ package org.hillel.homeworks.lesson2;
 import java.util.*;
 public class MyArrayList implements List<Integer> {
 
+    int size;
+    int[] arrayList;
+
+    //Constructor
+    public MyArrayList(int size) {
+        this.size = size;
+        this.arrayList = initArray(size);
+    }
+
+    //The initial array
+    public int[] initArray(int size) {
+        int[] arrayList = new int[size];
+        for (int i = 0; i < size - 1; i++) {
+            arrayList[i] = 0;
+        }
+        return arrayList;
+    }
+
+    //Filling the array with random value
+    public void fillArrayWithRandomDigits() {
+        for (int i = 0; i < arrayList.length; i++) {
+            arrayList[i] = new Random().nextInt(10);
+        }
+    }
     @Override
     public int size() {
         return 0;
