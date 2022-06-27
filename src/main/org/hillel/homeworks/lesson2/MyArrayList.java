@@ -29,12 +29,59 @@ public class MyArrayList implements List<Integer> {
     }
     @Override
     public int size() {
-        return 0;
+        return this.arrayList.length;
+    }
+
+    @Override
+    public Integer get(int index) {
+        return this.arrayList[index];
+    }
+
+    @Override
+    public void clear() {
+        Arrays.fill(arrayList, 0);
+    }
+
+    @Override
+    public Integer set(int index, Integer element) {
+        arrayList[index] = element;
+        return element;
+    }
+
+    @Override
+    public Integer remove(int index) {
+        arrayList[index] = 0;
+        return arrayList[index];
     }
 
     @Override
     public boolean isEmpty() {
-        return false;
+        boolean result = true;
+        for (int i = 0; i < size; i++) {
+            if (arrayList[i] != 0) {
+                result = false;
+                break;
+            }
+        }
+        return result;
+    }
+
+    @Override
+    public void add(int index, Integer element) {
+        int newSize = arrayList.length + 1;
+        int[] newArray = new int[newSize];
+        for (int i = 0; i < size; i++) {
+            if (i == index) {
+                newArray[i] = element;
+                for (i = index; i < size; i++) {
+                    newArray[i + 1] = arrayList[i];
+                }
+                break;
+            }
+            newArray[i] = arrayList[i];
+        }
+        arrayList = newArray;
+        size++;
     }
 
     @Override
@@ -90,31 +137,6 @@ public class MyArrayList implements List<Integer> {
     @Override
     public boolean retainAll(Collection<?> c) {
         return false;
-    }
-
-    @Override
-    public void clear() {
-
-    }
-
-    @Override
-    public Integer get(int index) {
-        return null;
-    }
-
-    @Override
-    public Integer set(int index, Integer element) {
-        return null;
-    }
-
-    @Override
-    public void add(int index, Integer element) {
-
-    }
-
-    @Override
-    public Integer remove(int index) {
-        return null;
     }
 
     @Override
