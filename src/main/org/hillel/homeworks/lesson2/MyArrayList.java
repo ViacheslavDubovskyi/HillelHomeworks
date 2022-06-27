@@ -1,6 +1,7 @@
 package org.hillel.homeworks.lesson2;
 
 import java.util.*;
+
 public class MyArrayList implements List<Integer> {
 
     int size;
@@ -22,11 +23,12 @@ public class MyArrayList implements List<Integer> {
     }
 
     //Filling the array with random value
-    public void fillArrayWithRandomDigits() {
+    public void fillArrayWithRandomDigits(int bound) {
         for (int i = 0; i < arrayList.length; i++) {
-            arrayList[i] = new Random().nextInt(10);
+            arrayList[i] = new Random().nextInt(bound);
         }
     }
+
     @Override
     public int size() {
         return this.arrayList.length;
@@ -85,6 +87,18 @@ public class MyArrayList implements List<Integer> {
     }
 
     @Override
+    public boolean add(Integer integer) {
+        int[] newArray = new int[arrayList.length + 1];
+        newArray[arrayList.length] = integer;
+        for (int i = 0; i < arrayList.length; i++) {
+            newArray[i] = arrayList[i];
+        }
+        arrayList = newArray;
+        size++;
+        return true;
+    }
+
+    @Override
     public boolean contains(Object o) {
         return false;
     }
@@ -102,11 +116,6 @@ public class MyArrayList implements List<Integer> {
     @Override
     public <T> T[] toArray(T[] a) {
         return null;
-    }
-
-    @Override
-    public boolean add(Integer integer) {
-        return false;
     }
 
     @Override
