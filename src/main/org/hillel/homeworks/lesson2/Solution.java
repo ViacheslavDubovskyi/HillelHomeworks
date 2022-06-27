@@ -4,17 +4,17 @@ public class Solution {
 
     public static void main(String[] args) {
 
-        Main main = new Main();
+        App app = new App();
 
-        main.initArray();
-        main.size();
-        main.fillArray(10);
-        main.add(4, 10);
-        main.set(8, 5);
-        main.remove(9);
-        main.isEmpty();
-        main.get(6);
-        main.add(15);
-        main.clear();
+        app.initArray();
+        app.size();
+        app.fillArray(10);
+        app.add(4, 10);
+        app.set(8, 5);
+        app.remove(9);
+        app.isEmpty();
+        app.get(6);
+        app.add(15);
+        app.clear();
     }
 }

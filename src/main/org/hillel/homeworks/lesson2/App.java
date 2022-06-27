@@ -1,6 +1,6 @@
 package org.hillel.homeworks.lesson2;
 
-public class Main {
+public class App {
 
     MyArrayList ArrayList = new MyArrayList(10);
 
