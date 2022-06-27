@@ -15,6 +15,7 @@ public class Solution {
         app.isEmpty();
         app.get(6);
         app.add(15);
+        app.removeByValue(15);
         app.clear();
     }
 }

@@ -90,11 +90,18 @@ public class MyArrayList implements List<Integer> {
     public boolean add(Integer integer) {
         int[] newArray = new int[arrayList.length + 1];
         newArray[arrayList.length] = integer;
-        for (int i = 0; i < arrayList.length; i++) {
-            newArray[i] = arrayList[i];
-        }
+        System.arraycopy(arrayList, 0, newArray, 0, arrayList.length);
         arrayList = newArray;
         size++;
+        return true;
+    }
+
+    public boolean removeByValue(int value) {
+        for (int i = 0; i < arrayList.length; i++) {
+            if (arrayList[i] == value) {
+                remove(i);
+            }
+        }
         return true;
     }
 

@@ -48,6 +48,11 @@ public class App {
         printArrayList(ArrayList);
     }
 
+    public void removeByValue(int value) {
+        System.out.println("Method 'removeByValue(value:" + value + "): " + ArrayList.removeByValue(value));
+        printArrayList(ArrayList);
+    }
+
     public void clear() {
         System.out.println("ArrayList with method 'clear()':");
         ArrayList.clear();
