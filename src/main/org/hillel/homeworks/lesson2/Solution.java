@@ -11,7 +11,7 @@ public class Solution {
         app.fillArray(10);
         app.add(4, 10);
         app.set(8, 5);
-        app.remove(2);
+        app.remove(9);
         app.isEmpty();
         app.get(6);
         app.add(15);

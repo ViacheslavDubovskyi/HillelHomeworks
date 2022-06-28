@@ -53,11 +53,11 @@ public class MyArrayList implements List<Integer> {
     @Override
     public Integer remove(int index) {
         int[] newArray = new int[arrayList.length - 1];
-        for (int i = 0; i < newArray.length - 1; i++) {
+        for (int i = 0; i < newArray.length; i++) {
             if (i == index) {
-                newArray[index] = arrayList[i + 1];
-                for (i = index; i < size; i++) {
-                    newArray[i - 1] = arrayList[i];
+                newArray[index] = arrayList[index + 1];
+                for (i = index; i < size - 1; i++) {
+                    newArray[i] = arrayList[i + 1];
                 }
                 break;
             }
@@ -71,7 +71,7 @@ public class MyArrayList implements List<Integer> {
     public void removeByValue(int value) {
         for (int i = 0; i < arrayList.length; i++) {
             if (arrayList[i] == value) {
-                remove(i + 1);
+                remove(i);
             }
         }
     }
