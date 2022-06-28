@@ -33,7 +33,8 @@ public class App {
         printArrayList(ArrayList);
     }
 
-    //Method removes element by the index
+    //Method removes element by the index,
+    //all elements shift one position to the left
     public void remove(int index) {
         System.out.println("ArrayList with method 'remove(index:" + index + ")':");
         ArrayList.remove(index);
@@ -60,7 +61,8 @@ public class App {
         printArrayList(ArrayList);
     }
 
-    //Method removes value from the list
+    //Method removes value (all elements with this value) from the list,
+    //all elements shift one (or more, if there are some elements) position to the left
     public void removeByValue(int value) {
         System.out.println("Method 'removeByValue(value:" + value + "):");
         ArrayList.removeByValue(value);
