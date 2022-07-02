@@ -1,49 +1,81 @@
 package org.hillel.homeworks.lesson3;
 
 public class App {
-    public static void main(String[] args) {
 
-        MyLinkedList MyLinkedList = new MyLinkedList();
+    MyLinkedList MyLinkedList = new MyLinkedList();
 
-        MyLinkedList.getFirst();
+    public void add(int element) {
+        System.out.println("Method 'add(element:" + element + ")':");
+        MyLinkedList.add(element);
+        printLinkedList(MyLinkedList);
+    }
 
-        System.out.println(MyLinkedList.isEmpty());
+    public void addFirst(int element) {
+        System.out.println("MyLinkedList with method 'addFirst(element:" + element + ")':");
+        MyLinkedList.addFirst(element);
+        printLinkedList(MyLinkedList);
+    }
 
-        MyLinkedList.add(5);
-        MyLinkedList.add(10);
-        MyLinkedList.add(15);
-        MyLinkedList.add(20);
-        MyLinkedList.add(25);
+    public void addLast(int element) {
+        System.out.println("MyLinkedList with method 'addLast(element:" + element + ")':");
+        MyLinkedList.addLast(element);
+        printLinkedList(MyLinkedList);
+    }
 
-        MyLinkedList.addFirst(7);
-        MyLinkedList.addLast(7);
-
+    public void removeFirst() {
+        System.out.println("MyLinkedList with method 'removeFirst()': ");
         MyLinkedList.removeFirst();
+        printLinkedList(MyLinkedList);
+    }
+
+    public void removeLast() {
+        System.out.println("MyLinkedList with method 'removeLast()': ");
         MyLinkedList.removeLast();
+        printLinkedList(MyLinkedList);
+    }
 
+    public void getFirst() {
+        System.out.println("First element of MyLinkedList: " + MyLinkedList.getFirst());
+    }
 
-        for (int i = 0; i < MyLinkedList.size; i++) {
-            System.out.print(MyLinkedList.get(i) + " ");
-        }
-        System.out.println("\n");
+    public void getLast() {
+        System.out.println("Last element of MyLinkedList: " + MyLinkedList.getLast());
+    }
 
-        System.out.println(MyLinkedList.isEmpty());
+    public void size() {
+        System.out.println("Size of MyLinkedList ('method (size)'): " + MyLinkedList.size());
+        System.out.println();
+    }
 
-        System.out.println(MyLinkedList.getLast());
+    public void remove(int index) {
+        System.out.println("MyLinkedList with method 'remove(index:" + index + ")':");
+        MyLinkedList.remove(index);
+        printLinkedList(MyLinkedList);
+    }
 
-        System.out.println(MyLinkedList.size());
+    public void get(int index) {
+        System.out.println();
+        System.out.println("Method 'get(index:" + index + ")': " + MyLinkedList.get(index));
+        System.out.println();
+    }
 
-        System.out.println(MyLinkedList.get(0));
+    public void isEmpty() {
+        System.out.println("Method 'isEmpty()': " + MyLinkedList.isEmpty());
+    }
 
-        MyLinkedList.remove(3);
-
-        for (int i = 0; i < MyLinkedList.size; i++) {
-            System.out.print(MyLinkedList.get(i) + " ");
-        }
-        System.out.println("\n");
-
+    public void clear() {
+        System.out.println("MyLinkedList with method 'clear()':");
         MyLinkedList.clear();
-        System.out.println(MyLinkedList);
+        printLinkedList(MyLinkedList);
+        isEmpty();
+    }
 
+    public static void printLinkedList(MyLinkedList MyLinkedList) {
+        System.out.print("[ ");
+        for (int i = 0; i < MyLinkedList.size; i++) {
+            System.out.print("{" + MyLinkedList.get(i) + "} ");
+        }
+        System.out.print("]\n");
+        System.out.println();
     }
 }

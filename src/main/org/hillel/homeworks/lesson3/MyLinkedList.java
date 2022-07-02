@@ -16,16 +16,6 @@ public class MyLinkedList implements List<Integer>, Deque<Integer> {
         public Node(Integer element) {
             this.item = element;
         }
-
-    }
-
-    @Override
-    public String toString() {
-        return "MyLinkedList{" +
-                "size=" + size +
-                ", first=" + first +
-                ", last=" + last +
-                '}';
     }
 
     public void add(int element) {
@@ -125,12 +115,12 @@ public class MyLinkedList implements List<Integer>, Deque<Integer> {
 
     @Override
     public void addLast(Integer integer) {
-        Node newNode = new Node(integer); // Создание нового элемента
-        if (isEmpty()) // Если список пуст,
-            first = newNode; // first --> newLink
+        Node newNode = new Node(integer);
+        if (isEmpty())
+            first = newNode;
         else
             last.next = newNode;
-        last = newNode; // newLink <-- last
+        last = newNode;
         size++;
     }
 
@@ -139,7 +129,7 @@ public class MyLinkedList implements List<Integer>, Deque<Integer> {
         int temp = first.item;
         if (first.next == null)
             last = null;
-        else// null <-- last
+        else
             first = first.next;
         size--;
         return temp;
@@ -151,7 +141,7 @@ public class MyLinkedList implements List<Integer>, Deque<Integer> {
         int temp = last.item;
         if (last.prev == null)
             last = null;
-        else// null <-- last
+        else
             last = last.prev;
         size--;
         return temp;
