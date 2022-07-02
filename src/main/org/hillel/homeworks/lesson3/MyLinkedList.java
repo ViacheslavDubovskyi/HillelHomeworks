@@ -49,14 +49,11 @@ public class MyLinkedList implements List<Integer>, Deque<Integer> {
     @Override
     public Integer remove(int index) {
         Node current = first;
-        Integer object = null;
         if (index == 0) {
             first = current.next;
-            object = current.item;
         } else if (size == index + 1) {
             current = last;
             last = current.prev;
-            object = current.item;
         } else {
             for (int i = 0; i < index; i++) {
                 current = current.next;
@@ -65,7 +62,7 @@ public class MyLinkedList implements List<Integer>, Deque<Integer> {
             current.next.prev = current.prev;
         }
         size--;
-        return object;
+        return index;
     }
 
     @Override
