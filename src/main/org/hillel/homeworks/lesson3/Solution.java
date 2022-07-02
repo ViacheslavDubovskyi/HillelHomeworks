@@ -3,6 +3,7 @@ package org.hillel.homeworks.lesson3;
 public class Solution {
 
     public static void main(String[] args) {
+
         App app = new App();
 
         app.isEmpty();
