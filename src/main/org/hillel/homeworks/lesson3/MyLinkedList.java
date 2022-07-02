@@ -4,25 +4,60 @@ import java.util.*;
 
 public class MyLinkedList implements List<Integer>, Deque<Integer> {
 
-    private int size = 0;
-    private Node first;
-    private Node last;
+    public int size = 0;
+    public Node first;
+    public Node last;
 
-    private static class Node {
+
+    public static class Node {
         Integer item;
         Node next;
         Node prev;
 
-        public Node(Node prev, Integer element, Node next) {
+        public Node(Integer element) {
             this.item = element;
-            this.next = next;
-            this.prev = prev;
         }
     }
 
     @Override
+    public String toString() {
+        return "MyLinkedList{" +
+                "size=" + size +
+                ", first=" + first +
+                ", last=" + last +
+                '}';
+    }
+
+    public void add(int element) {
+        if (size != 0) {
+            Node newMode = new Node(element);
+            last.next = newMode;
+            newMode.prev = last;
+            last = newMode;
+        } else {
+            last = new Node(element);
+            first = last;
+        }
+        size++;
+    }
+
+    @Override
     public Integer get(int index) {
-        return null;
+        Node current = first;
+        Integer object = null;
+        for (int i = 0; i < size; i++) {
+            if (i == index) {
+                object = current.item;
+                break;
+            } else {
+                current = current.next;
+            }
+        }
+        return object;
+    }
+
+    @Override
+    public void add(int index, Integer element) {
     }
 
     @Override
@@ -208,11 +243,6 @@ public class MyLinkedList implements List<Integer>, Deque<Integer> {
     @Override
     public Integer set(int index, Integer element) {
         return null;
-    }
-
-    @Override
-    public void add(int index, Integer element) {
-
     }
 
     @Override
