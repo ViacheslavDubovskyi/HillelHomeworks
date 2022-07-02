@@ -3,22 +3,47 @@ package org.hillel.homeworks.lesson3;
 public class App {
     public static void main(String[] args) {
 
-        MyLinkedList myLinkedList = new MyLinkedList();
+        MyLinkedList MyLinkedList = new MyLinkedList();
 
-        myLinkedList.add(5);
-        myLinkedList.add(10);
-        myLinkedList.add(15);
+        MyLinkedList.getFirst();
+
+        System.out.println(MyLinkedList.isEmpty());
+
+        MyLinkedList.add(5);
+        MyLinkedList.add(10);
+        MyLinkedList.add(15);
+        MyLinkedList.add(20);
+        MyLinkedList.add(25);
+
+        MyLinkedList.addFirst(7);
+        MyLinkedList.addLast(7);
+
+        MyLinkedList.removeFirst();
+        MyLinkedList.removeLast();
 
 
-        for (int i = 0; i < myLinkedList.size; i++) {
-            System.out.print(myLinkedList.get(i) + " ");
+        for (int i = 0; i < MyLinkedList.size; i++) {
+            System.out.print(MyLinkedList.get(i) + " ");
         }
         System.out.println("\n");
 
-        System.out.println(myLinkedList.get(0));
+        System.out.println(MyLinkedList.isEmpty());
 
-        System.out.println(myLinkedList);
+        System.out.println(MyLinkedList.getLast());
+
+        System.out.println(MyLinkedList.size());
+
+        System.out.println(MyLinkedList.get(0));
+
+        MyLinkedList.remove(3);
+
+        for (int i = 0; i < MyLinkedList.size; i++) {
+            System.out.print(MyLinkedList.get(i) + " ");
+        }
+        System.out.println("\n");
+
+        MyLinkedList.clear();
+        System.out.println(MyLinkedList);
 
     }
-
 }

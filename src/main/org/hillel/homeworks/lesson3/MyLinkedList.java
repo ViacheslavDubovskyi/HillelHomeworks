@@ -8,7 +8,6 @@ public class MyLinkedList implements List<Integer>, Deque<Integer> {
     public Node first;
     public Node last;
 
-
     public static class Node {
         Integer item;
         Node next;
@@ -17,6 +16,7 @@ public class MyLinkedList implements List<Integer>, Deque<Integer> {
         public Node(Integer element) {
             this.item = element;
         }
+
     }
 
     @Override
@@ -57,17 +57,108 @@ public class MyLinkedList implements List<Integer>, Deque<Integer> {
     }
 
     @Override
-    public void add(int index, Integer element) {
+    public Integer remove(int index) {
+        if (index == 0) {
+            Node node = first;
+            first = node.next;
+            node.prev = null;
+            node.next = null;
+            node.item = null;
+        } else if (size == index + 1) {
+            Node node = last;
+            last = node.prev;
+            last.next = null;
+            node.prev = null;
+            node.item = null;
+        } else {
+            Node node = first;
+            for (int i = 0; i < index; i++) {
+                node = node.next;
+            }
+            node.prev.next = node.next;
+            node.next.prev = node.prev;
+        }
+        size--;
+        return index;
+    }
+
+    @Override
+    public boolean isEmpty() {
+        return size == 0;
+    }
+
+    @Override
+    public int size() {
+        return size;
+    }
+
+    @Override
+    public void clear() {
+        size = 0;
+        first = null;
+        last = null;
+    }
+
+    @Override
+    public Integer getFirst() {
+        if (isEmpty()) {
+            System.out.println("The LinkedList is empty!");
+        }
+        return get(0);
+    }
+
+    @Override
+    public Integer getLast() {
+        if (isEmpty()) {
+            System.out.println("The LinkedList is empty!");
+        }
+        return get(size - 1);
     }
 
     @Override
     public void addFirst(Integer integer) {
-
+        Node newNode = new Node(integer);
+        newNode.next = first;
+        first = newNode;
+        size++;
     }
 
     @Override
     public void addLast(Integer integer) {
+        Node newNode = new Node(integer); // Создание нового элемента
+        if (isEmpty()) // Если список пуст,
+            first = newNode; // first --> newLink
+        else
+            last.next = newNode;
+        last = newNode; // newLink <-- last
+        size++;
+    }
 
+    @Override
+    public Integer removeFirst() {
+        int temp = first.item;
+        if (first.next == null)
+            last = null;
+        else// null <-- last
+            first = first.next;
+        size--;
+        return temp;
+    }
+
+
+    @Override
+    public Integer removeLast() {
+        int temp = last.item;
+        if (last.prev == null)
+            last = null;
+        else// null <-- last
+            last = last.prev;
+        size--;
+        return temp;
+    }
+
+    @Override
+    public void add(int index, Integer element) {
     }
 
     @Override
@@ -81,32 +172,12 @@ public class MyLinkedList implements List<Integer>, Deque<Integer> {
     }
 
     @Override
-    public Integer removeFirst() {
-        return null;
-    }
-
-    @Override
-    public Integer removeLast() {
-        return null;
-    }
-
-    @Override
     public Integer pollFirst() {
         return null;
     }
 
     @Override
     public Integer pollLast() {
-        return null;
-    }
-
-    @Override
-    public Integer getFirst() {
-        return null;
-    }
-
-    @Override
-    public Integer getLast() {
         return null;
     }
 
@@ -171,16 +242,6 @@ public class MyLinkedList implements List<Integer>, Deque<Integer> {
     }
 
     @Override
-    public int size() {
-        return 0;
-    }
-
-    @Override
-    public boolean isEmpty() {
-        return false;
-    }
-
-    @Override
     public boolean contains(Object o) {
         return false;
     }
@@ -236,17 +297,7 @@ public class MyLinkedList implements List<Integer>, Deque<Integer> {
     }
 
     @Override
-    public void clear() {
-
-    }
-
-    @Override
     public Integer set(int index, Integer element) {
-        return null;
-    }
-
-    @Override
-    public Integer remove(int index) {
         return null;
     }
 
