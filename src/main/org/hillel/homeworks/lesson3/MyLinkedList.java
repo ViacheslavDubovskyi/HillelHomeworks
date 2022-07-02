@@ -48,28 +48,24 @@ public class MyLinkedList implements List<Integer>, Deque<Integer> {
 
     @Override
     public Integer remove(int index) {
+        Node current = first;
+        Integer object = null;
         if (index == 0) {
-            Node node = first;
-            first = node.next;
-            node.prev = null;
-            node.next = null;
-            node.item = null;
+            first = current.next;
+            object = current.item;
         } else if (size == index + 1) {
-            Node node = last;
-            last = node.prev;
-            last.next = null;
-            node.prev = null;
-            node.item = null;
+            current = last;
+            last = current.prev;
+            object = current.item;
         } else {
-            Node node = first;
             for (int i = 0; i < index; i++) {
-                node = node.next;
+                current = current.next;
             }
-            node.prev.next = node.next;
-            node.next.prev = node.prev;
+            current.prev.next = current.next;
+            current.next.prev = current.prev;
         }
         size--;
-        return index;
+        return object;
     }
 
     @Override
