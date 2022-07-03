@@ -101,12 +101,8 @@ public class MyLinkedList implements List<Integer>, Deque<Integer> {
     @Override
     public void addFirst(Integer integer) {
         Node newNode = new Node(integer);
-        if (isEmpty())
-            first = newNode;
-        else {
-            first.prev = newNode;
-            newNode.next = first;
-        }
+        first.prev = newNode;
+        newNode.next = first;
         first = newNode;
         size++;
     }
