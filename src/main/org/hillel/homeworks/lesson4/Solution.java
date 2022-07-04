@@ -15,7 +15,7 @@ public class Solution {
         Smartphone smartphone6 = new Smartphone("Xiaomi",  "black");
         Smartphone smartphone7 = new Smartphone("Iphone",  "black");
         Smartphone smartphone8 = new Smartphone("Samsung",  "blue");
-        Smartphone smartphone9 = new Smartphone("Xiaomi",  "red");
+        Smartphone smartphone9 = new Smartphone("Xiaomi",  "black");
         Smartphone smartphone10 = new Smartphone("Iphone",  "white");
 
         List<Smartphone> smartphones = new ArrayList<>();

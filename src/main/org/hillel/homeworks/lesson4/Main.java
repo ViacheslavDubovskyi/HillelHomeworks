@@ -26,7 +26,7 @@ public class Main {
         for (int i = 0; i < smartphones.size(); i++) {
             for (int j = i + 1; j < smartphones.size(); j++) {
                 if (smartphones.get(i).equals(smartphones.get(j))) {
-                    System.out.print("Smartphone " + (i + 1) + " equals to Smartphone " + (j + 1) + " by all parameters" + '\n');
+                    System.out.print("Smartphone " + (i + 1) + " and Smartphone " + (j + 1) + " are the same by all parameters" + '\n');
                 }
             }
         }
@@ -38,7 +38,7 @@ public class Main {
         for (int i = 0; i < smartphones.size(); i++) {
             for (int j = i + 1; j < smartphones.size(); j++)
                 if (smartphones.get(i).equalsByColor(smartphones.get(j))) {
-                    System.out.print("Smartphone " + (i + 1) + " equals to Smartphone " + (j + 1) + " by color" + '\n');
+                    System.out.print("Smartphone " + (i + 1) + " and Smartphone " + (j + 1) + " are the same by color" + '\n');
                 }
         }
     }
@@ -49,7 +49,7 @@ public class Main {
         for (int i = 0; i < smartphones.size(); i++) {
             for (int j = i + 1; j < smartphones.size(); j++)
                 if (smartphones.get(i).equalsByModel(smartphones.get(j))) {
-                    System.out.print("Smartphone " + (i + 1) + " equals to Smartphone " + (j + 1) + " by model" + '\n');
+                    System.out.print("Smartphone " + (i + 1) + " and Smartphone " + (j + 1) + " are the same by model" + '\n');
                 }
         }
     }
