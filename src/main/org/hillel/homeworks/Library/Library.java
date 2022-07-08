@@ -12,10 +12,10 @@ public class Library {
 
     public static void main(String[] args) {
 
-        Country countryFrance = new Country("Франция");
-        Country countryEngland = new Country("Великобритания");
-        Country countryItaly = new Country("Италия");
-        Country countryIndia = new Country("Индия");
+        Country countryFrance = new Country("France");
+        Country countryEngland = new Country("Great Britain");
+        Country countryItaly = new Country("Italy");
+        Country countryIndia = new Country("India");
 
         //List of authors
         authorsList = new ArrayList<>();
