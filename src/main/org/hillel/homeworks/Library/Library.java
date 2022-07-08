@@ -6,8 +6,8 @@ import static org.hillel.homeworks.Library.AppLogic.*;
 
 public class Library {
 
-    public static ArrayList<Book> booksList;
-    public static ArrayList<Author> authorsList;
+    public static List<Book> booksList;
+    public static List<Author> authorsList;
     public static Scanner scanner;
 
     public static void main(String[] args) {
