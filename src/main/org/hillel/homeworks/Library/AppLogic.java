@@ -29,14 +29,19 @@ public class AppLogic {
         System.out.println(("You have selected search by ISBN. Please, enter ISBN number:"));
         printISBN(bookMap);
 
-        int userData = getUserData();
-        boolean keyExist = bookMap.containsKey(userData);
-        if (keyExist) {
-            Book foundBook = bookMap.get(userData);
-            System.out.println("The result of searching:");
-            System.out.println(foundBook);
-        } else {
-            System.out.println("Book not found");
+        while (true) {
+            int userData = getUserData();
+            boolean keyExist = bookMap.containsKey(userData);
+            if (keyExist) {
+                Book foundBook = bookMap.get(userData);
+                System.out.println("The result of searching:");
+                System.out.println(foundBook);
+                break;
+            }
+            if (userData == 0) {
+                break;
+            }
+            System.out.println("You entered incorrect ISBN. Please, try again (0-exit)");
         }
     }
 
@@ -55,12 +60,11 @@ public class AppLogic {
                     printBookByYearFilter(userData);
                     break;
                 }
-                System.out.println("You input incorrect year: " + userData);
             }
             if (userData == 0) {
                 break;
             }
-            System.out.println("You enter incorrect year");
+            System.out.println("You entered incorrect year. Please, try again (0-exit)");
         }
     }
 
@@ -81,7 +85,7 @@ public class AppLogic {
             if (userTitle.equals("0")) {
                 break;
             }
-            System.out.println("You enter incorrect title");
+            System.out.println("You entered incorrect title. Please, try again (0-exit)");
         }
     }
 
@@ -102,7 +106,7 @@ public class AppLogic {
             if (userAuthor.equals("0")) {
                 break;
             }
-            System.out.println("You enter incorrect name");
+            System.out.println("You entered incorrect name. Please, try again (0-exit)");
         }
     }
 

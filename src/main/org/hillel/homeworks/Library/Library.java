@@ -47,7 +47,6 @@ public class Library {
         }
 
         printBooks(booksList);
-        printAuthors(authorsList);
 
         System.out.println("Hello! Please, choose the action: 1 - search by year, 2 - search by title, " +
                 "3 - search by author, 4 - search by ISBN, 0 - exit from system:");
