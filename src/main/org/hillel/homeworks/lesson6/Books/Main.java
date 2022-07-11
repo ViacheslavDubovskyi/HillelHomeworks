@@ -11,13 +11,8 @@ public class Main {
         String userAuthor = scanner.nextLine();
         scanner.close();
 
-        Map<Author, List<Book>> authorBookMap = new HashMap<>();
-        authorBookMap.put(new Author("Александр Дюма"), LibraryOfBooks.booksDyuma());
-        authorBookMap.put(new Author("Жюль Верн"), LibraryOfBooks.booksVern());
-        authorBookMap.put(new Author("Артур Конан Дойл"), LibraryOfBooks.booksDoyl());
-
         System.out.println("The result of searching:");
-        listBooksByAuthor(userAuthor, authorBookMap);
+        listBooksByAuthor(userAuthor, getBookMap());
     }
 
     public static void listBooksByAuthor(String userAuthor, Map<Author, List<Book>> authorBookMap) {
@@ -27,5 +22,15 @@ public class Main {
                 System.out.println(value);
             }
         }
+    }
+
+    public static Map<Author, List<Book>> getBookMap() {
+        Map<Author, List<Book>> authorBookMap = new HashMap<>();
+
+        authorBookMap.put(new Author("Александр Дюма"), LibraryOfBooks.booksDyuma());
+        authorBookMap.put(new Author("Жюль Верн"), LibraryOfBooks.booksVern());
+        authorBookMap.put(new Author("Артур Конан Дойл"), LibraryOfBooks.booksDoyl());
+
+        return authorBookMap;
     }
 }
