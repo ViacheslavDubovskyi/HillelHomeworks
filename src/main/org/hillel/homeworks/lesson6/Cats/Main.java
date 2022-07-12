@@ -17,13 +17,13 @@ public class Main {
     public static List<Cat> changeCity() {
         List<Cat> changeCatCity = getListOfCat();
         for (Cat cat : changeCatCity) {
-            cat.setCity(randomCity());
+            cat.setCity(getRandomCity());
         }
 
         return changeCatCity;
     }
 
-    public static String randomCity() {
+    public static String getRandomCity() {
         List<String> cities = new ArrayList<>();
         cities.add("Lviv");
         cities.add("Kharkiv");

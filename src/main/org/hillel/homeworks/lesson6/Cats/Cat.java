@@ -2,8 +2,8 @@ package org.hillel.homeworks.lesson6.Cats;
 
 public class Cat {
 
-    private final String name;
-    private final int age;
+    private String name;
+    private int age;
     private String city;
 
     public Cat(String name, int age, String city) {
