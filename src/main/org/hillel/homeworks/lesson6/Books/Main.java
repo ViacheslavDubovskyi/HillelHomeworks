@@ -11,25 +11,21 @@ public class Main {
         String userAuthor = scanner.nextLine();
         scanner.close();
 
+        Map<String, List<String>> authorBookMap = getBookMap();
         System.out.println("The result of searching:");
-        listBooksByAuthor(userAuthor, getBookMap());
+        System.out.println(listBooksByAuthor(userAuthor, authorBookMap));
     }
 
-    public static void listBooksByAuthor(String userAuthor, Map<Author, List<Book>> authorBookMap) {
-        for (Map.Entry<Author, List<Book>> element : authorBookMap.entrySet()) {
-            if (element.getKey().getName().contains(userAuthor)) {
-                List<Book> value = element.getValue();
-                System.out.println(value);
-            }
-        }
+    public static List<String> listBooksByAuthor(String userAuthor, Map<String, List<String>> authorBookMap) {
+        return authorBookMap.get(userAuthor);
     }
 
-    public static Map<Author, List<Book>> getBookMap() {
-        Map<Author, List<Book>> authorBookMap = new HashMap<>();
+    public static Map<String, List<String>> getBookMap() {
+        Map<String, List<String>> authorBookMap = new HashMap<>();
 
-        authorBookMap.put(new Author("Александр Дюма"), LibraryOfBooks.booksDyuma());
-        authorBookMap.put(new Author("Жюль Верн"), LibraryOfBooks.booksVern());
-        authorBookMap.put(new Author("Артур Конан Дойл"), LibraryOfBooks.booksDoyl());
+        authorBookMap.put("Александр Дюма", LibraryOfBooks.booksDyuma());
+        authorBookMap.put("Жюль Верн", LibraryOfBooks.booksVern());
+        authorBookMap.put("Артур Конан Дойл", LibraryOfBooks.booksDoyl());
 
         return authorBookMap;
     }
