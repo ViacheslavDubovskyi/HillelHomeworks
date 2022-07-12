@@ -6,25 +6,25 @@ public class LibraryOfBooks {
 
     public static List<String> booksDyuma (){
         List<String> booksDyuma = new ArrayList<>();
-        booksDyuma.add("Три мушкетера");
-        booksDyuma.add("Королева Марго");
-        booksDyuma.add("Граф Монте-Кристо");
+        booksDyuma.add("Three musketeers");
+        booksDyuma.add("Queen Margo");
+        booksDyuma.add("Graf Monte-Kristo");
         return booksDyuma;
     }
 
     public static List<String> booksVern (){
         List<String> booksVern = new ArrayList<>();
-        booksVern.add("Пятнцадцатилетний капитан");
-        booksVern.add("В поисках капитана Гранта");
-        booksVern.add("Таинственный остров");
+        booksVern.add("Captain at fifteen");
+        booksVern.add("Looking for Captain Grant");
+        booksVern.add("Mysterious Island");
         return booksVern;
     }
 
     public static List<String> booksDoyl (){
         List<String> booksDoyl = new ArrayList<>();
-        booksDoyl.add("Шерлок Холмс");
-        booksDoyl.add("Маракотовая бездна");
-        booksDoyl.add("Затеряный мир");
+        booksDoyl.add("Sherlock Holmes");
+        booksDoyl.add("Maracot Abyss");
+        booksDoyl.add("Lost World");
         return booksDoyl;
     }
 

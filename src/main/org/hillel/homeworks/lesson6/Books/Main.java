@@ -6,6 +6,9 @@ public class Main {
 
     public static void main(String[] args) {
 
+        System.out.println("List of authors:");
+        System.out.println(getBookMap().keySet());
+
         Scanner scanner = new Scanner(System.in);
         System.out.println("Hello! Please, enter name of the author: ");
         String userAuthor = scanner.nextLine();
@@ -23,9 +26,9 @@ public class Main {
     public static Map<String, List<String>> getBookMap() {
         Map<String, List<String>> authorBookMap = new HashMap<>();
 
-        authorBookMap.put("Александр Дюма", LibraryOfBooks.booksDyuma());
-        authorBookMap.put("Жюль Верн", LibraryOfBooks.booksVern());
-        authorBookMap.put("Артур Конан Дойл", LibraryOfBooks.booksDoyl());
+        authorBookMap.put("Alexander Dyuma", LibraryOfBooks.booksDyuma());
+        authorBookMap.put("Jules Verne", LibraryOfBooks.booksVern());
+        authorBookMap.put("Artur Konan Doyl", LibraryOfBooks.booksDoyl());
 
         return authorBookMap;
     }
